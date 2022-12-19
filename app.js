@@ -106,8 +106,7 @@ document.querySelector(".gameboard");
 
 
 document.querySelector('.gameboard').addEventListener('click', handleClick);
-document.querySelector('button').addEventListener('click', init);
-
 
 
 /*-------------------------------- Functions --------------------------------*/
+
