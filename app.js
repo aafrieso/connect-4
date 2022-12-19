@@ -1,8 +1,10 @@
-document.addEventListener('DomContentLoaded', () => {
-    const circles = document.querySelectorAll('gameboard')
-    const message = document.getElementById('message')
-    const showPlayerTurn = document.getElementById('current-player')
-})
+/*-------------------------------- Constants --------------------------------*/
+const circles = document.querySelectorAll('gameboard')
+    // console.log(circles);
+const message = document.getElementById('message')
+    // console.log(message);
+const showPlayerTurn = document.getElementById('current-player')
+    // console.log(showPlayerTurn);
 
 
 const winningCombos = [
@@ -80,4 +82,33 @@ const winningCombos = [
     [40, 39, 38, 37],
 ]
 
+/*---------------------------- Variables (state) ----------------------------*/
 
+let board;
+let playerTurn;
+let winner;
+let tie;
+let player 1;
+let player 2;
+
+
+
+
+
+
+
+/*------------------------ Cached Element References ------------------------*/
+
+
+
+
+
+
+/*----------------------------- Event Listeners -----------------------------*/
+
+
+
+
+
+
+/*-------------------------------- Functions --------------------------------*/
