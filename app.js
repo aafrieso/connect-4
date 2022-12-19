@@ -88,8 +88,9 @@ let board;
 let playerTurn;
 let winner;
 let tie;
-let player 1;
-let player 2;
+let player1;
+let player2;
+let currentPlayer = player1;
 
 
 
