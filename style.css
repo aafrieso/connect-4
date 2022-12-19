@@ -1,25 +1,24 @@
 body {
-    background-color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    margin: 0
-    height: 500vh;
+    display: flex;
+    flex-direction: column;
+
 }
+
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(7, 100px);
-    grid-template-rows: repeat(6, 100px);
-    width: 800px;
-    height: 700px;
+    grid-template-columns: repeat(7, 105px);
+    grid-template-rows: repeat(6, 105px);
+    width: 500;
+    height: 400;
     margin: 0 auto;
     justify-content: center;
-    background-color: dark black;
+    background-color: black;
 }
 
 .circle {
-    border: 10px black;
-    background-color: black;
+    border: 5px solid black;
+    background-color: white;
     border-radius: 50%;
-    outline: 1px black;
+    outline: 5px black;
 }
