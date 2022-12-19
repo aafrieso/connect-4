@@ -92,23 +92,21 @@ let player1;
 let player2;
 let currentPlayer = player1;
 
-
-
-
-
-
-
 /*------------------------ Cached Element References ------------------------*/
 
 
+document.getElementById(".circles");
 
+document.querySelectorAll("message");
 
+document.querySelector(".gameboard");
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 
-
+document.querySelector('.gameboard').addEventListener('click', handleClick);
+document.querySelector('button').addEventListener('click', init);
 
 
 
