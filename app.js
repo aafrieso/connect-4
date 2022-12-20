@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-const gameRow = document.querySelectorAll('.game-board');
+const gameRow = document.getElementsByClassName('.game-board');
     // console.log(circles);
 
 const gameCircle = document.querySelectorAll(".circle")
@@ -10,7 +10,7 @@ const message = document.getElementById('message')
 const showPlayerTurn = document.querySelector('.current-player')
     // console.log(showPlayerTurn);
 
-const resetGame = document.querySelector('.reset')
+const gameResetBtn = document.querySelector('.reset')
 
 const winningCombos = [
     [0, 1, 2, 3],
@@ -89,46 +89,92 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let gameBoard = []
-let playerTurn;
+let gameBoard;
 let winner;
 let tie;
 let player1;
 let player2;
+let turn;
 let currentPlayer = player1;
 
 /*------------------------ Cached Element References ------------------------*/
 
 
-document.getElementById(".circles");
+const gameCirclesEls = document.querySelectorAll(".circle");
 
-document.querySelectorAll("message");
+const gameMessageEl = document.getElementById("message");
 
-document.querySelector(".gameboard");
+const gameRestBtnEl = document.getElementById("reset")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-for(let i = 0; i < gameCircle.length; i++) {
-    gameCircle[i].addEventListener('click', (evt) => {
-        console.log(`${evt.target.parentElement.rowIndex}, ${evt.target.cellIndex}`);
-    })
-}
+gameCirclesEls.forEach(circle => circle.addEventListener("click", handleClick))
 
-
-
+gameResetBtn.addEventListener("click, init")
 
 
 /*-------------------------------- Functions --------------------------------*/
 
-
-
-
-
-// Switching P1 between P2 
-
-if  (currentPlayer == 1) {
-    currentPlayer = 2
-} else {
-    currentPlayer = 1
+function init() {
+    board = [null, null, null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+         null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null];
+    turn = 1;
+    winner = false;
+    tie = false;
+    render();
 }
+init()
+
+function placeCircleToken(idx) {
+    gameBoard[idx] = turn
+}
+
+function handleClick(evt) {
+    if (winner === true) {
+      return
+    }
+    console.log(evt.target)
+    const circleIdx = evt.target.id
+    let sliced = circleIdx.slice(circleIdx.length - 1)
+    console.log(sliced)
+    if (gameBoard[sliced] === null) {
+      placeCircleToken(sliced)
+      checkForWinner()
+      checkForTie()
+      switchPlayerTurn()
+      render()
+    } 
+    }
+
+
+function switchPlayerTurn() {
+    if (winner === true){
+      return
+    } else {
+      turn = turn * -1
+    }
+  }
+
+function render () {
+    updateBoard();
+    updateMessage();
+}
+
+function updateBoard() {
+    board.forEach(function(circle, idx) {
+        if (square === 1) {
+        return gameCirclesEls[idx].innerHTML = "Red";
+        }else if (square === -1) {
+            gameCirclesEls[idx].innerHTML = "Blue";
+        }else {
+            gameCirclesEls[idx].innerHTML = "";
+        }
+    })
+}
+
+// function gameResetBtn() {
+    
+// }
+
