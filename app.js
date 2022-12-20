@@ -89,7 +89,7 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let gameBoard;
+let board;
 let winner;
 let tie;
 let player1;
@@ -103,7 +103,7 @@ let currentPlayer = player1;
 
 const gameCirclesEls = document.querySelectorAll(".circle");
 
-const gameMessageEl = document.getElementById("message");
+const messageEl = document.getElementById("message");
 
 const gameRestBtnEl = document.getElementById("reset")
 
@@ -129,7 +129,7 @@ function init() {
 init()
 
 function placeCircleToken(idx) {
-    gameBoard[idx] = turn
+    board[idx] = turn
 }
 
 function handleClick(evt) {
@@ -137,11 +137,12 @@ function handleClick(evt) {
     console.log(circIdx);
     if (board[circIdx] !== null || winner === true) {
       return
-      checkForWinner()
-      checkForTie()
-      switchPlayerTurn()
-      render()
     } 
+    checkForWinner()
+    placeCircleToken(circIdx)
+    checkForTie()
+    switchPlayerTurn()
+    render()
     }
 
 function switchPlayerTurn() {
@@ -154,21 +155,48 @@ function switchPlayerTurn() {
 
 function render () {
     updateBoard();
+    updateMessage()
 }
 
 function updateBoard() {
     board.forEach((circle, idx) => {
         if (circle === 1) {
-            gameCirclesEls[idx].textContent = "red;"
-        }if (circle === -1) {
-            gameCirclesEls[idx].textContent = "Blue";
-        }if(circle === null) {
-            gameCirclesEls[idx].textContent = " ";
+            gameCirclesEls[idx].style.backgroundColor = "red"
+        }else if (circle === -1) {
+            gameCirclesEls[idx].style.backgroundColor = "blue"
+        }else {
+            gameCirclesEls[idx].style.backgroundColor = "white";
         }
     })
 }
 
-// function gameResetBtn() {
-    
-// }
+function updateMessage() {
+    if(winner === false && tie === false) {
+        messageEl.textContent = `Bonjour, it's player ${turn === 1? "red's" : "blue's"} turn`;
+    } else if (winner === false && tie === true) {
+        messageEl.textContent = `${1 === -1? 'red' : 'blue'} It was a close game, it's a tie!`;
+    } else {
+        messageEl.textContent = `Yay félicitations player ${turn === -1? 'red' : 'blue'} wins!`;
+    }
+}
+
+function checkForTie() {
+    tie = board.every(function(cir) {
+        return cir !== null
+    })
+    console.log(tie);
+}
+
+function checkForWinner() {
+    winningCombos.forEach(function(arr){
+    let winning = 0
+    arr.forEach(function(el){
+        winning += board[el]
+   })
+         console.log('check winner', winning)
+         if (Math.abs(winning) === 4) { 
+             winner = true
+         }
+       })
+     }
 
