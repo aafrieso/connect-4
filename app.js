@@ -100,7 +100,6 @@ gameCirclesEls.forEach(circle => circle.addEventListener("click", handleClick))
 
 document.querySelector('button').addEventListener('click', init);
 
-
 /*-------------------------------- Functions --------------------------------*/
 
 function init() {
@@ -114,16 +113,16 @@ function init() {
 }
 init()
 
-function placeCircleToken(idx) {
-    board[idx] = turn
-}
-
 function handleClick(evt) {
     const circIdx = Number(evt.target.id.replace('circ',''))
     if (board[circIdx] !== null || winner === true) {
       return
     } 
-    placeCircleToken(circIdx)
+    pillar = 35
+    while (board[circIdx + pillar] !== null){
+      pillar -= 7
+    }
+    board[circIdx + pillar] = turn
     checkForWinner()
     checkForTie()
     switchPlayerTurn()
@@ -159,9 +158,9 @@ function updateMessage() {
     if(winner === false && tie === false) {
         messageEl.textContent = `Bonjour, it's player ${turn === 1? "red's" : "blue's"} turn`;
     } else if (winner === false && tie === true) {
-        messageEl.textContent = `${1 === -1? 'red' : 'blue'} It was a close game, it's a tie!`;
+        messageEl.textContent = "It was a close game, it's a tie!"
     } else {
-        messageEl.textContent = `Yay félicitations player ${turn === -1? 'red' : 'blue'} wins!`;
+        messageEl.textContent = `Yay félicitations player ${turn === -1? 'blue' : 'red'} wins!`;
     }
 }
 
@@ -183,5 +182,4 @@ function checkForWinner() {
              winner = true
          }
        })
-     }
-
+ }
