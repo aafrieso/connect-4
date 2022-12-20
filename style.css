@@ -4,7 +4,6 @@ body {
     text-align: center;
 }
 
-
 .game-board {
     display: grid;
     grid-template-columns: repeat(7, 105px);
@@ -21,4 +20,9 @@ body {
     background-color: white;
     border-radius: 50%;
     outline: 5px black;
+}
+
+.reset {
+    text-align: center;
+    border: 1.5px solid black;
 }

@@ -1,11 +1,16 @@
 /*-------------------------------- Constants --------------------------------*/
-const circles = document.querySelectorAll('gameboard')
+const gameRow = document.querySelectorAll('.game-board');
     // console.log(circles);
+
+const gameCircle = document.querySelectorAll(".circle")
+
 const message = document.getElementById('message')
     // console.log(message);
-const showPlayerTurn = document.getElementById('current-player')
+
+const showPlayerTurn = document.querySelector('.current-player')
     // console.log(showPlayerTurn);
 
+const resetGame = document.querySelector('.reset')
 
 const winningCombos = [
     [0, 1, 2, 3],
@@ -84,7 +89,7 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let board;
+let gameBoard = []
 let playerTurn;
 let winner;
 let tie;
@@ -104,9 +109,26 @@ document.querySelector(".gameboard");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+for(let i = 0; i < gameCircle.length; i++) {
+    gameCircle[i].addEventListener('click', (evt) => {
+        console.log(`${evt.target.parentElement.rowIndex}, ${evt.target.cellIndex}`);
+    })
+}
 
-document.querySelector('.gameboard').addEventListener('click', handleClick);
+
+
 
 
 /*-------------------------------- Functions --------------------------------*/
 
+
+
+
+
+// Switching P1 between P2 
+
+if  (currentPlayer == 1) {
+    currentPlayer = 2
+} else {
+    currentPlayer = 1
+}
