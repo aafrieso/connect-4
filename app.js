@@ -97,6 +97,7 @@ let player2;
 let turn;
 let currentPlayer = player1;
 
+
 /*------------------------ Cached Element References ------------------------*/
 
 
@@ -111,7 +112,7 @@ const gameRestBtnEl = document.getElementById("reset")
 
 gameCirclesEls.forEach(circle => circle.addEventListener("click", handleClick))
 
-gameResetBtn.addEventListener("click, init")
+// gameResetBtn.addEventListener("click, init")
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -132,22 +133,16 @@ function placeCircleToken(idx) {
 }
 
 function handleClick(evt) {
-    if (winner === true) {
+    const circIdx = Number(evt.target.id.replace('circ',''))
+    console.log(circIdx);
+    if (board[circIdx] !== null || winner === true) {
       return
-    }
-    console.log(evt.target)
-    const circleIdx = evt.target.id
-    let sliced = circleIdx.slice(circleIdx.length - 1)
-    console.log(sliced)
-    if (gameBoard[sliced] === null) {
-      placeCircleToken(sliced)
       checkForWinner()
       checkForTie()
       switchPlayerTurn()
       render()
     } 
     }
-
 
 function switchPlayerTurn() {
     if (winner === true){
@@ -159,17 +154,16 @@ function switchPlayerTurn() {
 
 function render () {
     updateBoard();
-    updateMessage();
 }
 
 function updateBoard() {
-    board.forEach(function(circle, idx) {
-        if (square === 1) {
-        return gameCirclesEls[idx].innerHTML = "Red";
-        }else if (square === -1) {
-            gameCirclesEls[idx].innerHTML = "Blue";
-        }else {
-            gameCirclesEls[idx].innerHTML = "";
+    board.forEach((circle, idx) => {
+        if (circle === 1) {
+            gameCirclesEls[idx].textContent = "red;"
+        }if (circle === -1) {
+            gameCirclesEls[idx].textContent = "Blue";
+        }if(circle === null) {
+            gameCirclesEls[idx].textContent = " ";
         }
     })
 }
