@@ -1,16 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-const gameRow = document.getElementsByClassName('.game-board');
-    // console.log(circles);
-
-const gameCircle = document.querySelectorAll(".circle")
-
-const message = document.getElementById('message')
-    // console.log(message);
-
-const showPlayerTurn = document.querySelector('.current-player')
-    // console.log(showPlayerTurn);
-
-const gameResetBtn = document.querySelector('.reset')
 
 const winningCombos = [
     [0, 1, 2, 3],
@@ -100,19 +88,17 @@ let currentPlayer = player1;
 
 /*------------------------ Cached Element References ------------------------*/
 
+const gameRow = document.getElementsByClassName('.game-board');
 
 const gameCirclesEls = document.querySelectorAll(".circle");
 
 const messageEl = document.getElementById("message");
 
-const gameRestBtnEl = document.getElementById("reset")
-
-
 /*----------------------------- Event Listeners -----------------------------*/
 
 gameCirclesEls.forEach(circle => circle.addEventListener("click", handleClick))
 
-// gameResetBtn.addEventListener("click, init")
+document.querySelector('button').addEventListener('click', init);
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -134,12 +120,11 @@ function placeCircleToken(idx) {
 
 function handleClick(evt) {
     const circIdx = Number(evt.target.id.replace('circ',''))
-    console.log(circIdx);
     if (board[circIdx] !== null || winner === true) {
       return
     } 
-    checkForWinner()
     placeCircleToken(circIdx)
+    checkForWinner()
     checkForTie()
     switchPlayerTurn()
     render()
