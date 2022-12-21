@@ -8,8 +8,7 @@ body {
     display: grid;
     grid-template-columns: repeat(7, 105px);
     grid-template-rows: repeat(6, 105px);
-    width: 500;
-    height: 400;
+    width: 100%;
     margin: 0 auto;
     justify-content: center;
     background-color: black;
@@ -26,6 +25,26 @@ body {
     text-align: center;
     border: 1.5px solid black;
 }
-
-
     
+.wording {
+    width: 100%;
+}
+
+@media only screen and (min-width: 820px ) {
+    .game-board {
+        display: block;
+        width: 100%;
+       padding-bottom: 25px;
+    }
+   
+}
+
+@media only screen and (min-width: 375px ) {
+    .game-board {
+        display: block;
+        width: 100%;
+       padding-bottom: 25px;
+       padding-right: 3px;
+    }
+   
+}
