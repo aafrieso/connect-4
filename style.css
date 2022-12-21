@@ -2,9 +2,9 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-image: url("/assets/img/paris.png");
+    background-image: url("/assets/img/eiffel-tower.png");
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     
 }
 
@@ -27,13 +27,16 @@ body {
 #reset {
     text-align: center;
     border: 1.5px solid black;
-    width: 100px;
-    margin: 10px auto;
+    width: 130px;
+    height: 20px;
+   margin: 0 auto;
 }
     
-/* .wording {
-   
-} */
+.wording {
+   color: white;
+   font-size: x-large;
+   font-weight: 100px;
+}
 
 
 
