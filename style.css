@@ -5,7 +5,6 @@ body {
     background-image: url("/assets/img/eiffel-tower.png");
     background-size: cover;
     background-position: center center;
-    
 }
 
 .game-board {
@@ -28,8 +27,12 @@ body {
     text-align: center;
     border: 1.5px solid black;
     width: 130px;
-    height: 20px;
-   margin: 0 auto;
+    height: 45px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 55px;
+    font-size: large;
+    background-color: #B2BEB5;
 }
     
 .wording {

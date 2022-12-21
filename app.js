@@ -149,7 +149,7 @@ function updateBoard() {
         }else if (circle === -1) {
             gameCirclesEls[idx].style.backgroundColor = "blue"
         }else {
-            gameCirclesEls[idx].style.backgroundColor = "white";
+            gameCirclesEls[idx].style.backgroundColor = "#B2BEB5";
         }
     })
 }
