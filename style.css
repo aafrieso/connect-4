@@ -11,9 +11,11 @@ body {
     display: grid;
     grid-template-columns: repeat(7, 105px);
     grid-template-rows: repeat(6, 105px);
-    margin: 100px auto;
+    margin: 65px auto;
     justify-content: center;
     background-color: transparent;
+    max-width: 500px;
+    max-height: 550px;
 }
 
 .circle {
@@ -27,21 +29,26 @@ body {
     text-align: center;
     border: 1.5px solid black;
     width: 130px;
-    height: 45px;
+    height: 50px;
     margin: 0 auto;
     cursor: pointer;
     border-radius: 55px;
     font-size: large;
     background-color: #B2BEB5;
+    margin-top: 1.5%;
 }
     
 .wording {
    color: white;
    font-size: x-large;
    font-weight: 100px;
+   margin-top: 3%;
 }
 
-
+#message {
+    margin-top: 3%;
+    color: yellow;
+}
 
 
 
