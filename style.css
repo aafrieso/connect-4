@@ -3,8 +3,9 @@ body {
     flex-direction: column;
     text-align: center;
     background-image: url("/assets/img/eiffel-tower.png");
+    overflow: hidden;
     background-size: cover;
-    background-position: center center;
+    background-position: center center;`
 }
 
 .game-board {
@@ -14,8 +15,8 @@ body {
     margin: 65px auto;
     justify-content: center;
     background-color: transparent;
-    max-width: 500px;
-    max-height: 550px;
+    /* max-width: 500px; */
+    max-height: 100vh;
 }
 
 .circle {
