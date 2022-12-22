@@ -32,11 +32,15 @@ body {
     /* margin: 5px; */
 }
 
+.btn:hover {
+    background-position: right center;
+  } 
+
 #reset {
     text-align: center;
     border: 1.5px solid black;
     width: 130px;
-    height: 50px;
+    height: 45px;
     margin-top: 25px ;
     cursor: pointer;
     border-radius: 40px;
