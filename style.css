@@ -33,20 +33,19 @@ body {
 }
 
 .btn:hover {
-    background-position: right center;
+    background-position: left right;
   } 
 
 #reset {
     text-align: center;
     border: 1.5px solid black;
-    width: 130px;
-    height: 45px;
+    width: 110px;
+    height: 50px;
     margin-top: 25px ;
     cursor: pointer;
     border-radius: 40px;
     font-size: large;
-    background-color: #B2BEB5;
-    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    background-image: linear-gradient(to right, #f6d365 2%, #fda085 60%, #f6d365 100%);
 }
     
 .wording {
