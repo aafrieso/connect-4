@@ -1,11 +1,16 @@
+html {
+    height: 100vh;
+    background-image: url("/assets/img/eiffel-tower.png");
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+}
+
 body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-image: url("/assets/img/eiffel-tower.png");
-    overflow: hidden;
-    background-size: cover;
-    background-position: center center;`
+    height: 100vh;
 }
 
 .game-board {
@@ -16,7 +21,7 @@ body {
     justify-content: center;
     background-color: transparent;
     max-width: 300px;
-    max-height: 200px;
+    max-height: 2000vh;
 }
 
 .circle {
@@ -25,7 +30,6 @@ body {
     border-radius: 50%;
     outline: 5px black;
     max-height: 100px;
-    max-width: 100px;
 }
 
 #reset {
