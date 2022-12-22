@@ -3,7 +3,7 @@
 
 Connect Quatre is a French inspired version of connect 4. This is a 2 player game, players will choose either red or blue tokens. Player 1 will be red and Player 2 will be blue. The goal of the game is to get 4 of the same color in a row. Tokens will fall down to the nearest available slot. Once the game is finished, the game board can be reset using the reset game button. This will also play some French accordion music. 
 
-## [Play the game here](austinfriesorger-connect4.netlify.app/ "link to connect 4 game")
+## [Play the game here](https://austinfriesorger-connect4.netlify.app/)
 
 # Technologies used 
 
