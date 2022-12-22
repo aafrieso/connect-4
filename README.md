@@ -3,4 +3,4 @@
 
 connect Quatre is a French inspired version of connect 4. This is a 2 player game, players will choose either red or blue tokens. Player 1 will be red and Player 2 will be blue. The goal of the game is to get 4 of the same color in a row. Tokens will fall down to the nearest available slot. 
 
-Play thr game here 
+Play the game here 
