@@ -24,6 +24,8 @@ body {
     background-color: white;
     border-radius: 50%;
     outline: 5px black;
+    max-height: 100px;
+    max-width: 100px;
 }
 
 #reset {
@@ -79,7 +81,6 @@ body {
     transform: scale(0.9);
     box-shadow: 0 8 40 rgba(0,0,0,0.5);
 }
-
 
 
 /* @media only screen and (min-width: 820px ) {
