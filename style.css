@@ -13,8 +13,8 @@ body {
 }
 
 .game-board {
-    width: 550px;
-    height: 640px;
+    width: 400px;
+    height: 320px;
     display: flex;
     flex-wrap: wrap;
     grid-template-columns: repeat(7, 105px);
@@ -26,8 +26,8 @@ body {
 }
 
 .circle {
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
     border: 5px solid black;
     border-radius: 50%;
     outline: 5px black;
@@ -39,7 +39,7 @@ body {
     border: 1.5px solid black;
     width: 130px;
     height: 50px;
-    margin: 0 auto;
+    margin-top: 25px ;
     cursor: pointer;
     border-radius: 55px;
     font-size: large;
