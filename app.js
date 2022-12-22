@@ -94,11 +94,13 @@ const gameCirclesEls = document.querySelectorAll(".circle");
 
 const messageEl = document.getElementById("message");
 
+const frenchSound = new Audio("./assets/audio/frenchaccordion.wav")
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 gameCirclesEls.forEach(circle => circle.addEventListener("click", handleClick))
 
-document.querySelector('button').addEventListener('click', init);
+document.querySelector('button').addEventListener('click', frenchAudio);
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -182,4 +184,10 @@ function checkForWinner() {
              winner = true
          }
        })
+ }
+
+ function frenchAudio() {
+    frenchSound.play()
+    frenchSound.volume = 0.12
+    init()
  }
