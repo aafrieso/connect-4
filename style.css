@@ -15,7 +15,7 @@ body {
     margin: 65px auto;
     justify-content: center;
     background-color: transparent;
-    max-width: 500px;
+    max-width: 300px;
     max-height: 2000vh;
 }
 
@@ -36,7 +36,6 @@ body {
     border-radius: 55px;
     font-size: large;
     background-color: #B2BEB5;
-    margin-top: 1.5%;
 }
     
 .wording {
