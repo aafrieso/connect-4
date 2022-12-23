@@ -24,8 +24,8 @@ Connect Quatre is a French inspired version of connect 4. This is a 2 player gam
 
 * Dark mode
 
-* token sound effect
+* Token sound effect
 
 * Accessibility features
 
-* winning celebration effect
+* Winning celebration effect
