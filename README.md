@@ -14,5 +14,12 @@ Connect Quatre is a French inspired version of connect 4. This is a 2 player gam
 
 # Credits 
 
+* French flag favicon drawn using faviconer.com
 *
-*
+
+# Ice Box
+
+[](Dark mode)
+[]token sound effect)
+[](Accessibility features)
+[](winning celebration effect)

@@ -1,5 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 
+//This will list all of the ways in which a player can win
+
 const winningCombos = [
     [0, 1, 2, 3],
     [1, 9, 17, 25],
@@ -77,6 +79,8 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
+//variables for the game  
+
 let board;
 let winner;
 let tie;
@@ -88,12 +92,16 @@ let currentPlayer = player1;
 
 /*------------------------ Cached Element References ------------------------*/
 
+//cached element for the game baord 
 const gameRow = document.getElementsByClassName('.game-board');
 
+//cached element for the tokens  
 const gameCirclesEls = document.querySelectorAll(".circle");
 
+//cached element for the player 1/player 2 message  
 const messageEl = document.getElementById("message");
 
+//cached element for the sound on the reset button
 const frenchSound = new Audio("./assets/audio/frenchaccordion.wav")
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -104,6 +112,7 @@ document.querySelector('button').addEventListener('click', frenchAudio);
 
 /*-------------------------------- Functions --------------------------------*/
 
+//Basic functionality of the board 
 function init() {
     board = [null, null, null, null, null, null, null, null, null, null, null, null, 
         null, null, null, null, null, null, null, null, null, null, null, null, null, null,
@@ -115,6 +124,7 @@ function init() {
 }
 init()
 
+//The ability for tokens to fall into the board 
 function handleClick(evt) {
     const circIdx = Number(evt.target.id.replace('circ',''))
     if (board[circIdx] !== null || winner === true) {
@@ -131,6 +141,7 @@ function handleClick(evt) {
     render()
     }
 
+//Switch between player 1 and player 2 
 function switchPlayerTurn() {
     if (winner === true){
       return
@@ -139,11 +150,13 @@ function switchPlayerTurn() {
     }
   }
 
+//updates the board and the message that displays 
 function render () {
     updateBoard();
     updateMessage()
 }
 
+//sqitches between red and blue tokens 
 function updateBoard() {
     board.forEach((circle, idx) => {
         if (circle === 1) {
@@ -166,6 +179,7 @@ function updateMessage() {
     }
 }
 
+//checks the board for a tie 
 function checkForTie() {
     tie = board.every(function(cir) {
         return cir !== null
@@ -173,6 +187,7 @@ function checkForTie() {
     console.log(tie);
 }
 
+//checks the board for a winner
 function checkForWinner() {
     winningCombos.forEach(function(arr){
     let winning = 0
@@ -186,6 +201,7 @@ function checkForWinner() {
        })
  }
 
+ //adds audio to the reset button
  function frenchAudio() {
     frenchSound.play()
     frenchSound.volume = 0.12

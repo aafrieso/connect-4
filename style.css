@@ -45,7 +45,7 @@ body {
     cursor: pointer;
     border-radius: 40px;
     font-size: large;
-    background-image: linear-gradient(to right, #f6d365 2%, #fda085 60%, #f6d365 100%);
+    background-image: linear-gradient(to right, #f6d363 5%, #fda083 60%, #f6d363 100%);
 }
     
 .wording {
