@@ -9,8 +9,10 @@ Connect Quatre is a French inspired version of connect 4. This is a 2 player gam
 
 * CSS
 * JavaScript
-* HTML 
-* git 
+* HTML
+* Git
+* GitHub
+* Visual Studio Code  
 
 # Credits 
 
